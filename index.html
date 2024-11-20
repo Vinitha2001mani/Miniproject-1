@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+        }
+
+        /* First Navbar (h5) */
+        .navbar-h5 {
+            background-color: rgb(232, 57, 80);
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            font-size: 1.2rem;
+        }
+
+        /* Second Navbar (h4) */
+        .navbar-h4 {
+            background-color: rgb(52, 67, 231);
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-h4 .left-content {
+            font-size: 1.5rem;
+        }
+
+        .navbar-h4 .right-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navbar-h4 input[type="search"] {
+            padding: 5px 10px;
+            border-radius: 3px;
+            border: none;
+        }
+
+        .navbar-h4 input[type="search"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-h4 i {
+            cursor: pointer;
+            font-size: 1rem;
+            color: black;
+        }
+       
+        .icon-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: #f0f0f0; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container i {
+    font-size: 20px;
+    color: #333;
+}
+.subscript {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: red;
+        color: white;
+        font-size: 10px;
+        padding: 2px 5px;
+        border-radius: 50%;
+        text-align: center;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+  
+        @media (max-width: 768px) {
+            .navbar-h5{
+                text-align: center;
+            }
+            .navbar-h4 {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar-h4 .right-content {
+                width: 100%;
+                justify-content: space-evenly;
+                margin-top: 10px;
+            }
+
+            .navbar-h4 .right-content i {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+
+            .navbar-h4 input[type="search"] {
+                width: 80%;
+                margin-top: 10px;
+                padding: 8px;
+            }
+
+            .navbar-h4 .left-content {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+            
+          
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .col-6 {
+            width: 47%; /* Each column occupies 50% */
+            height: 70vh;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+           
+        }
+
+        .profile-img {
+            height: 95px;
+            width: 95px;
+            border-radius: 50%;
+        }
+
+        .stats, .signatories {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .stat, .signatory {
+            text-align: center;
+            flex: 1;
+            margin: 0 5px;
+            padding: 20px 10px;
+            background-color: #d9f1ff;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            line-height: 2;
+        }
+        .signatory h4 {
+            color: rgb(26, 78, 163);
+        }
+        
+        .stat h4{
+            color: rgb(26, 78, 163);
+            
+        }
+
+        .buttons {
+           margin-top: 15px;
+           
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            color: #fff;
+            background-color: rgb(241, 11, 68);
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signatories img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .spl{
+            line-height: 2;
+            margin-left: 40px;
+        }
+        .spl h4{
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .col-6 {
+                width: 90%;
+            }
+
+            button {
+                margin-bottom: 10px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- First Navbar -->
+    <div class="navbar-h5">
+        My Will
+    </div>
+
+    <!-- Second Navbar -->
+    <div class="navbar-h4">
+        <div class="left-content">
+            Good morning, Vinoth! <br>
+            <span style="font-size: 1rem;">Today is November 2024</span>
+        </div>
+        <div class="right-content">
+            <input type="search" placeholder="Search" aria-label="Search">
+            <div class="icon-container" style="position: relative;">
+                <i class="fa-solid fa-bell" title="Notifications" id="bell"></i>
+                <div class="subscript" id="notification-count">0</div>
+            </div>
+            <div class="icon-container">
+            <i class="fa-solid fa-gear" title="Settings" id="gear"></i>
+        </div>
+        <div class="icon-container">
+            <i class="fa-solid fa-arrow-right-to-bracket" title="Log Out" id="bracket"></i>
+        </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Left Column -->
+        <div class="col-6">
+            <div class="row">
+                <img src="images/client1.png.jpg" alt="Client Image" class="profile-img">
+                <div class="spl">
+                    <h4>Ethan Will</h4>
+                    <p>Date of Creation: 04/12/1988</p>
+                    <p>Status: Complete</p>
+                    <h4>£ 2.5 Lakhs</h4>
+                    <p>Worth assets today</p>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <h4>10</h4>
+                    <p>Active Assets</p>
+                </div>
+                <div class="stat">
+                    <h4>3</h4>
+                    <p>Active Liabilities</p>
+                </div>
+                <div class="stat">
+                    <h4>15</h4>
+                    <p>Active Beneficiaries</p>
+                </div>
+                <div class="stat">
+                    <h4>3</h4>
+                    <p>Active Signatories</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button style="margin-left: 17px;">Add New Asset</button><br>
+                <button style="margin-top: 20px;margin-left: 18px;">Update Asset Value</button>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-6">
+            <h2>Signatory Will</h2>
+            <div class="signatories">
+                <div class="signatory">
+                    <img src="images/client3.png.jpg" alt="Signatory Image">
+                    <h4>Liam</h4>
+                    <p>Witness</p>
+                    <p>Date: 28.04.2013</p>
+                    <p>Status: Complete</p>
+                </div>
+                <div class="signatory">
+                    <img src="images/client3.png.jpg" alt="Signatory Image">
+                    <h4>Liam</h4>
+                    <p>Witness</p>
+                    <p>Date: 28.04.2013</p>
+                    <p>Status: Complete</p>
+                </div>
+                <div class="signatory">
+                    <img src="images/client3.png.jpg" alt="Signatory Image">
+                    <h4>Liam</h4>
+                    <p>Witness</p>
+                    <p>Date: 28.04.2013</p>
+                    <p>Status: Complete</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button style="margin-left: 18px;">View Invitations</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Select the "Add New Asset" button
+        const addAssetButton = document.querySelector('.buttons button');
+        // Select the notification count element
+        const notificationCountElement = document.getElementById('notification-count');
+        
+        // Initialize the notification count
+        let notificationCount = 0;
+    
+        // Add a click event listener to the "Add New Asset" button
+        addAssetButton.addEventListener('click', () => {
+            // Increment the notification count
+            notificationCount++;
+    
+            // Update the notification badge
+            notificationCountElement.textContent = notificationCount;
+    
+            // Optional: Log the updated count for debugging
+            console.log(`Notification count updated: ${notificationCount}`);
+        });
+    </script>
+
+        
+
+
+</body>
+</html>
